@@ -1,5 +1,6 @@
 import './App.css';
 import Create from './components/create/create';
+import Read from './components/delete/read';
 
 function App() {
   return (
@@ -10,6 +11,10 @@ function App() {
       
       <div>
         <Create/>
+      </div>
+
+      <div style={{marginTop:20}}>
+        <Read/>
       </div>
     </div>
   );
