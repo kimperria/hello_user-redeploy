@@ -25,6 +25,21 @@ export default function Read() {
     localStorage.setItem('firstName', firstName)
     localStorage.setItem('lastName', lastName)
   }
+
+  const getData =() =>{
+    axios
+    .get(`https://62ac411fbd0e5d29af1e3126.mockapi.io/crud`)
+    .then((getData) => {
+      console.log(getData.data);
+      setApiData(getData.data);
+    });
+  }
+
+  const onDelete =(id) => {
+    axios.delete(`https://62ac411fbd0e5d29af1e3126.mockapi.io/crud/${id}`).then(()=>{
+      getData();
+    })
+  }
   return (
     <div>
       <Table celled>
@@ -51,9 +66,7 @@ export default function Read() {
                   </Link>
                 </Table.Cell>
                 <Table.Cell>
-                  <Link to="/delete">
-                    <Button id="delete">Delete</Button>
-                  </Link>
+                    <Button id="delete" onClick={()=> onDelete(data.id)}>Delete</Button>
                 </Table.Cell>
               </Table.Row>
             );
