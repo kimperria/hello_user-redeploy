@@ -1,5 +1,6 @@
-import React, {useState} from "react"
-import {Form, Button} from 'semantic-ui-react'
+import React, {useState} from "react";
+import {Form, Button} from 'semantic-ui-react';
+import axios from 'axios';
 
 export default function Create(){
     const [firstName, setFirstName]= useState('');
@@ -7,6 +8,15 @@ export default function Create(){
 
     console.log(firstName);
     console.log(lastName)
+
+    const sendDataToAPI = ()=>{
+        axios.post(`https://62ac411fbd0e5d29af1e3126.mockapi.io/crud`,
+        {
+            firstName,
+            lastName
+        })
+
+    }
     return (
         <div>
              <Form>
@@ -22,7 +32,7 @@ export default function Create(){
                 onChange={(e)=> setLastName(e.target.value)} 
                 placeholder='Last Name' />
                 </Form.Field>
-                <Button type='submit'>Submit</Button>
+                <Button type='submit' onClick={sendDataToAPI}>Submit</Button>
             </Form>
         </div>
     );
