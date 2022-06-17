@@ -1,17 +1,18 @@
-import React, {useEffect} from "react";
-import { Table } from 'semantic-ui-react';
+import React, {useEffect, useState} from "react";
+import { Button, Table } from 'semantic-ui-react';
 import axios from 'axios';
 
 export default function Read(){
-
+    const [apiData, setApiData] = useState([]);
     useEffect(()=> {
         axios.get(`https://62ac411fbd0e5d29af1e3126.mockapi.io/crud`).then((getData)=>{
             console.log(getData.data)
+            setApiData(getData.data)
         })
     })
     return(
         <div>
-                        <Table celled>
+            <Table celled>
                 <Table.Header>
                     <Table.Row>
                         <Table.HeaderCell>ID</Table.HeaderCell>
@@ -23,18 +24,22 @@ export default function Read(){
                 </Table.Header>
 
                 <Table.Body>
-                <Table.Row>
-                            <Table.Cell>3</Table.Cell>
-                            <Table.Cell>2</Table.Cell>
-                            <Table.Cell>1</Table.Cell>
-                            <Table.Cell>
-
-                            </Table.Cell>
-                            <Table.Cell>
-
-                            </Table.Cell>
-                        </Table.Row>
-            </Table.Body>
+                        {apiData.map((data)=> {
+                            return(
+                                <Table.Row>
+                                    <Table.Cell>{data.id}</Table.Cell>
+                                    <Table.Cell>{data.firstName}</Table.Cell>
+                                    <Table.Cell>{data.lastName}</Table.Cell>
+                                    <Table.Cell>
+                                        <Button color="green">Update</Button>
+                                    </Table.Cell>
+                                    <Table.Cell>
+                                        <Button color="red">Delete</Button>
+                                    </Table.Cell>
+                                </Table.Row>
+                            )
+                        })}
+                </Table.Body>
             </Table>
         </div>
     )
