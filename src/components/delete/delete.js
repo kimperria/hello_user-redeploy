@@ -2,6 +2,6 @@ import React from "react";
 
 export default function Delete(){
     return(
-        <div>Delete</div>
+        <div>Delete Works</div>
     )
 }
