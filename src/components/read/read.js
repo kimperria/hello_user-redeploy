@@ -15,9 +15,15 @@ export default function Read() {
       });
   });
 
-  const setID =(id)=> {
-    console.log(id)
+//   const setID =(id)=> {
+//     console.log(id)
+//     localStorage.setItem('ID', id)
+//   }
+
+  const setData = (id, firstName, lastName) =>{
     localStorage.setItem('ID', id)
+    localStorage.setItem('firstName', firstName)
+    localStorage.setItem('lastName', lastName)
   }
   return (
     <div>
@@ -41,7 +47,7 @@ export default function Read() {
                 <Table.Cell>{data.lastName}</Table.Cell>
                 <Table.Cell>
                   <Link to="/update">
-                    <Button id="update"  onClick={()=> setID(data.id)}>Update</Button>
+                    <Button id="update"  onClick={()=> setData(data.id, data.firstName, data.lastName)}>Update</Button>
                   </Link>
                 </Table.Cell>
                 <Table.Cell>
