@@ -1,6 +1,6 @@
 import './App.css';
 import Create from './components/create/create';
-import Read from './components/delete/read';
+import Read from './components/read/read';
 
 function App() {
   return (

@@ -1,0 +1,15 @@
+#update{
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    color: white;
+}
+
+#delete{
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    color: white;
+}
