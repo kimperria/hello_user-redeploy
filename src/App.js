@@ -1,9 +1,16 @@
 import './App.css';
+import Create from './components/create/create';
 
 function App() {
   return (
     <div className='main'>
-      <h3>React Crud operations</h3>
+      <div>
+          <h3>React Crud operations</h3>
+      </div>
+      
+      <div>
+        <Create/>
+      </div>
     </div>
   );
 }
