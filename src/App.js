@@ -25,7 +25,7 @@ function App() {
           </Routes>
         </div>
         <Routes>
-          <Route path="/update" component={Update} />
+          <Route path="/update" component={Update} element={<Update/>}/>
           <Route path="/delete" component={Delete} />
         </Routes>
       </div>

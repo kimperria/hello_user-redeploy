@@ -14,6 +14,11 @@ export default function Read() {
         setApiData(getData.data);
       });
   });
+
+  const setID =(id)=> {
+    console.log(id)
+    localStorage.setItem('ID', id)
+  }
   return (
     <div>
       <Table celled>
@@ -36,7 +41,7 @@ export default function Read() {
                 <Table.Cell>{data.lastName}</Table.Cell>
                 <Table.Cell>
                   <Link to="/update">
-                    <Button id="update">Update</Button>
+                    <Button id="update"  onClick={()=> setID(data.id)}>Update</Button>
                   </Link>
                 </Table.Cell>
                 <Table.Cell>
