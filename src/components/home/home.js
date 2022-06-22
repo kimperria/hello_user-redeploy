@@ -1,4 +1,6 @@
 import React from 'react'
+import Create from '../create/create'
+import Read from '../read/read'
 
 export default function Home() {
   return (
@@ -10,7 +12,7 @@ export default function Home() {
             <div className='col-md-6'>
                 <div className='card'>
                     <div className='card-body'>
-                        <h5 className='card-title'>Hello User</h5>
+                        <h5 className='card-title' >Hello User</h5>
                         <p className='card-text'>
                             This is a simple application that demonstrate and performs CRUD processes.
                         </p>
@@ -22,9 +24,12 @@ export default function Home() {
             </div>
         </div>
 
-        <section className='row'>
-                
-        </section>
+        <div>
+        Create Functionality
+        <hr></hr>
+        <Create/>
+        </div>
+
     </div>
   )
 }

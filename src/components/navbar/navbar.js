@@ -30,24 +30,24 @@ export default function Navbar() {
                 </Link>
 
 
-              <Link to="/create">
+              {/* <Link to="/create">
                 <li className="nav-item">
                   <a className="nav-link" href="#">Create</a>
                 </li>
-              </Link>
+              </Link> */}
 
 
               <Link to="/read">
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Read</a>
+                  <p className="nav-link">Read</p>
                 </li>
               </Link>
 
-              <Link to="/update">
+              {/* <Link to="/update">
                 <li className="nav-item">
                   <a className="nav-link" href="#">Update</a>
                 </li>
-              </Link>
+              </Link> */}
 
               {/* <li className="nav-item dropdown">
                 <a

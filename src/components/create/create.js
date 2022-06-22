@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button } from "semantic-ui-react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Create() {
   const [firstName, setFirstName] = useState("");
@@ -18,12 +19,10 @@ export default function Create() {
   return (
     <div className="container container-fluid">
       <div className="row mt-5">
-        <div className="col-md-5">
-                {/* empty */}
-        </div>
-        <div className="col-md-4">
+        <div className="col-md-4">{/* empty */}</div>
+        <div className="col-md-6">
           <div className="card">
-            <h5 className="card-title">Create</h5>
+            <h5 className="card-header text-center">Create user here!</h5>
             <div className="card-body">
               <Form>
                 <Form.Field>
@@ -56,6 +55,10 @@ export default function Create() {
                 </Button>
               </Form>
             </div>
+
+            <Link to="/read" className="text-center">
+              <p>Click here to view user/s list on Read component</p>
+            </Link>
           </div>
         </div>
       </div>
