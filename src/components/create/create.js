@@ -1,39 +1,64 @@
-import React, {useState} from "react";
-import {Form, Button} from 'semantic-ui-react';
-import axios from 'axios';
+import React, { useState } from "react";
+import { Form, Button } from "semantic-ui-react";
+import axios from "axios";
 
-export default function Create(){
-    const [firstName, setFirstName]= useState('');
-    const [lastName, setLastName]= useState('');
+export default function Create() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
-    console.log(firstName);
-    console.log(lastName)
+  console.log(firstName);
+  console.log(lastName);
 
-    const sendDataToAPI = ()=>{
-        axios.post(`https://62ac411fbd0e5d29af1e3126.mockapi.io/crud`,
-        {
-            firstName,
-            lastName
-        })
-
-    }
-    return (
-        <div>
-             <Form>
-                <Form.Field>
-                    <label>First Name</label>
-                    <input name="fname" 
-                    onChange={(e)=> setFirstName(e.target.value)} 
-                    placeholder='First Name' />
-                </Form.Field>
-                <Form.Field>
-                <label>Last Name</label>
-                <input name="lname" 
-                onChange={(e)=> setLastName(e.target.value)} 
-                placeholder='Last Name' />
-                </Form.Field>
-                <Button type='submit' onClick={sendDataToAPI}>Submit</Button>
-            </Form>
+  const sendDataToAPI = () => {
+    axios.post(`https://62b2c1f020cad3685c93262c.mockapi.io/users`, {
+      firstName,
+      lastName,
+    });
+  };
+  return (
+    <div className="container container-fluid">
+      <div className="row mt-5">
+        <div className="col-md-5">
+                {/* empty */}
         </div>
-    );
+        <div className="col-md-4">
+          <div className="card">
+            <h5 className="card-title">Create</h5>
+            <div className="card-body">
+              <Form>
+                <Form.Field>
+                  <div className=" mb-2">
+                    <label>First Name</label> <br />
+                    <input
+                      name="fname"
+                      onChange={(e) => setFirstName(e.target.value)}
+                      placeholder="First Name"
+                    />
+                  </div>
+                </Form.Field>
+
+                <Form.Field>
+                  <div className="mb-2">
+                    <label>Last Name</label> <br />
+                    <input
+                      name="lname"
+                      onChange={(e) => setLastName(e.target.value)}
+                      placeholder="Last Name"
+                    />
+                  </div>
+                </Form.Field>
+                <Button
+                  className="btn btn-primary"
+                  type="submit"
+                  onClick={sendDataToAPI}
+                >
+                  Submit
+                </Button>
+              </Form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

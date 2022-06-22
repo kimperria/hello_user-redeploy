@@ -8,7 +8,7 @@ export default function Read() {
   const [apiData, setApiData] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://62ac411fbd0e5d29af1e3126.mockapi.io/crud`)
+      .get(`https://62b2c1f020cad3685c93262c.mockapi.io/users`)
       .then((getData) => {
         console.log(getData.data);
         setApiData(getData.data);
@@ -28,7 +28,7 @@ export default function Read() {
 
   const getData =() =>{
     axios
-    .get(`https://62ac411fbd0e5d29af1e3126.mockapi.io/crud`)
+    .get(`https://62b2c1f020cad3685c93262c.mockapi.io/users`)
     .then((getData) => {
       console.log(getData.data);
       setApiData(getData.data);
@@ -36,12 +36,13 @@ export default function Read() {
   }
 
   const onDelete =(id) => {
-    axios.delete(`https://62ac411fbd0e5d29af1e3126.mockapi.io/crud/${id}`).then(()=>{
+    axios.delete(`https://62b2c1f020cad3685c93262c.mockapi.io/users/${id}`).then(()=>{
       getData();
     })
   }
   return (
-    <div>
+    <div  className="container container-fluid">
+
       <Table celled>
         <Table.Header>
           <Table.Row>

@@ -1,46 +1,70 @@
-import React, {useState, useEffect} from "react";
-import {Form, Button} from 'semantic-ui-react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { Form, Button } from "semantic-ui-react";
+import axios from "axios";
 
-export default function Update(){
-    const [firstName, setFirstName]= useState('');
-    const [lastName, setLastName]= useState('');
-    const [ID, setID] = useState(null);
+export default function Update() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [ID, setID] = useState(null);
 
-    const sendDataToAPI = ()=>{
-        axios.put(`https://62ac411fbd0e5d29af1e3126.mockapi.io/crud/${ID}`,
-        {
-            firstName,
-            lastName
-        })
-    }
+  const sendDataToAPI = () => {
+    axios.put(`https://62ac411fbd0e5d29af1e3126.mockapi.io/crud/${ID}`, {
+      firstName,
+      lastName,
+    });
+  };
 
-    useEffect(()=>{
-        setFirstName(localStorage.getItem('firstName'));
+  useEffect(() => {
+    setFirstName(localStorage.getItem("firstName"));
 
-        setLastName(localStorage.getItem('lastName'));
+    setLastName(localStorage.getItem("lastName"));
 
-        setID(localStorage.getItem('ID'))
-    }, [])
-    return (
-        <div>
-             <Form>
+    setID(localStorage.getItem("ID"));
+  }, []);
+  return (
+    <div className="container container-fluid">
+      <div className="row mt-5">
+        <div className="col-md-5">{/* empty */}</div>
+
+        <div className="col-md-5">
+          <div className="card">
+            <h5 className="card-header">Update User Information</h5>
+            <p className="card-body">
+              <Form>
                 <Form.Field>
-                    <label>First Name</label>
-                    <input name="fname" 
-                    value={firstName}
-                    onChange={(e)=> setFirstName(e.target.value)} 
-                    placeholder='First Name' />
+                  <div className="mb-3">
+                    <label>First Name</label> <br />
+                    <input
+                      name="fname"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      placeholder="First Name"
+                    />
+                  </div>
                 </Form.Field>
                 <Form.Field>
-                <label>Last Name</label>
-                <input name="lname"
-                value={lastName} 
-                onChange={(e)=> setLastName(e.target.value)} 
-                placeholder='Last Name' />
+                  <div className="mb-3">
+                    <label>Last Name</label> <br />
+                    <input
+                      name="lname"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      placeholder="Last Name"
+                    />
+                  </div>
                 </Form.Field>
-                <Button type='submit' onClick={sendDataToAPI}>Update</Button>
-            </Form>
+                <Button
+                  className="btn btn-success"
+                  type="submit"
+                  onClick={sendDataToAPI}
+                >
+                  Update
+                </Button>
+              </Form>
+            </p>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
