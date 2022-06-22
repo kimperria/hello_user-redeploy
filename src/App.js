@@ -10,7 +10,7 @@ import Delete from "./components/delete/delete";
 function App() {
   return (
     <>
-      <Router>
+      <Router basename="/hello_user">
         <Navbar />
 
         <Routes>
