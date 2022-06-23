@@ -8,7 +8,7 @@ export default function Update() {
   const [ID, setID] = useState(null);
 
   const sendDataToAPI = () => {
-    axios.put(`https://62ac411fbd0e5d29af1e3126.mockapi.io/crud/${ID}`, {
+    axios.put(`https://62b2c1f020cad3685c93262c.mockapi.io/users/${ID}`, {
       firstName,
       lastName,
     });

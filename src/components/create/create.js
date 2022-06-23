@@ -25,40 +25,52 @@ export default function Create() {
             <h5 className="card-header text-center">Create user here!</h5>
             <div className="card-body">
               <Form>
-                <Form.Field>
-                  <div className=" mb-2">
-                    <label>First Name</label> <br />
-                    <input
-                      name="fname"
-                      onChange={(e) => setFirstName(e.target.value)}
-                      placeholder="First Name"
-                    />
+                <div className="row">
+                  <div className="col-md-6 col-sm-12 col-lg-6">
+                    <Form.Field>
+                      <div className=" mb-2">
+                        <label>First Name</label> <br />
+                        <input
+                          name="fname"
+                          onChange={(e) => setFirstName(e.target.value)}
+                          placeholder="First Name"
+                        />
+                      </div>
+                    </Form.Field>
                   </div>
-                </Form.Field>
+                  <div className="col-md-6 col-sm-12 col-lg-6">
+                    <Form.Field>
+                      <div className="mb-2">
+                        <label>Last Name</label> <br />
+                        <input
+                          name="lname"
+                          onChange={(e) => setLastName(e.target.value)}
+                          placeholder="Last Name"
+                        />
+                      </div>
+                    </Form.Field>
+                  </div>
+                </div>
 
-                <Form.Field>
-                  <div className="mb-2">
-                    <label>Last Name</label> <br />
-                    <input
-                      name="lname"
-                      onChange={(e) => setLastName(e.target.value)}
-                      placeholder="Last Name"
-                    />
+                <div className="row">
+                  <div className="col-sm-12 col-sm-4 col-lg-4"></div>
+                  <div className="col-sm-12 col-sm-4 col-lg-4">
+                    <Button
+                      className="btn btn-primary"
+                      type="submit"
+                      onClick={sendDataToAPI}
+                    >
+                      Create User
+                    </Button>
                   </div>
-                </Form.Field>
-                <Button
-                  className="btn btn-primary"
-                  type="submit"
-                  onClick={sendDataToAPI}
-                >
-                  Submit
-                </Button>
+                  <div className="col-sm-12 col-sm-4 col-lg-4"></div>
+                </div>
               </Form>
             </div>
 
-            <Link to="/read" className="text-center">
+            {/* <Link to="/read" className="text-center">
               <p>Click here to view user/s list on Read component</p>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

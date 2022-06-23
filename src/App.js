@@ -10,13 +10,13 @@ import Delete from "./components/delete/delete";
 function App() {
   return (
     <>
-      <Router basename="/hello_user">
+      <Router>
         <Navbar />
 
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route exact path="/create" element={<Create />} />
-          <Route exact path="/read" element={<Read/>} />
+          <Route exact path="/read" element={<Read />} />
           <Route path="/update" component={Update} element={<Update />} />
           <Route path="/delete" component={Delete} />
         </Routes>

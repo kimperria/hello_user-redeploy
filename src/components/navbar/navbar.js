@@ -6,7 +6,7 @@ export default function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container container-fluid">
-          <a href="#" className="navbar-brand">Hello User</a>
+          <a className="navbar-brand">Hello User</a>
           <button
             className="navbar-toggler"
             type="button"
@@ -23,7 +23,7 @@ export default function Navbar() {
             <ul className="navbar-nav">
                 <Link to='/'>
                 <li className="nav-item">
-                <a className="nav-link active" href="#" aria-current="page">
+                <a className="nav-link active" aria-current="page">
                   Home
                 </a>
               </li>
@@ -39,7 +39,7 @@ export default function Navbar() {
 
               <Link to="/read">
                 <li className="nav-item">
-                  <p className="nav-link">Read</p>
+                  <span className="nav-link">Read</span>
                 </li>
               </Link>
 
