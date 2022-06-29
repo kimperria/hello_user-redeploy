@@ -76,10 +76,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - Framework: React and React Schmantics for UI
 - Language: JavaScript
 
-### Known Bugs
----
-
-Unfortunately application crushed upon deployment. Still a WIP fixing this issue.
 ## Author
 ---
  Kimani John
